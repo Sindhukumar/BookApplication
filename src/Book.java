@@ -5,6 +5,14 @@ public class Book {
 	private double price;
 	private boolean isInStock;
 	
+	Book(){
+		isInStock = true;
+	}
+	Book(double price){
+		this.price=price;
+		isInStock = true;
+	}
+	
 	public String getTitle() {
 		return title;
 	}
@@ -34,6 +42,15 @@ public class Book {
 	}
 	public void setInStock(boolean isInStock) {
 		this.isInStock = isInStock;
+	}
+	public double getPrice(int n){
+		double p=0;
+		int count = 0;
+		while(isInStock&&count<n){
+			p+=price;
+			count++;
+		}
+		return p;
 	}
 	public void getDisplayText(){
 		System.out.println("Author: "+ author);
